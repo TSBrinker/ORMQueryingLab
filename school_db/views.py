@@ -329,16 +329,17 @@ LIMIT 21
 # Delete the student that you have created and updated
 # Check your MySQL Workbench to confirm the student is no longer in the table!
 def problem_seven(request):
+  Student.objects.get(id=11).delete()
 
     # Make sure to set this equal to the primary key of the row you just created!
-    student_id = 11
+  student_id = 11
 
-    try:
+  try:
         student = Student.objects.get(pk=student_id)
-    except ObjectDoesNotExist:
+  except ObjectDoesNotExist:
         print('Great! It failed and couldnt find the object because we deleted it!')
 
-    return complete(request)
+  return complete(request)
 
 
 # Supporting Query Method Documentation:
